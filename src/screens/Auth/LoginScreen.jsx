@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, SafeAreaView, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
 import Input from '../../components/Inputs/Input'
+import PrimaryButton from '../../components/Buttons/Button'
 
 function LoginScreen() {
     return (
@@ -16,9 +17,7 @@ function LoginScreen() {
                     <Input label="Password" placeholder="Masukkan Password" />
                     <Text>Lupa Password?</Text>
 
-                    <TouchableOpacity>
-                        <Text>Masuk</Text>
-                    </TouchableOpacity>
+                    <PrimaryButton>Masuk</PrimaryButton>
                 </View>
 
                 <View>
