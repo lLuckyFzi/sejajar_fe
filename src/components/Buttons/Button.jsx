@@ -4,10 +4,10 @@ import { Text } from '@react-navigation/elements'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 
 export function PrimaryButton(props) {
-    const { children, textAlign = 'center', style } = props
+    const { children, textAlign = 'center', style, ...otherProps } = props
 
     return (
-        <TouchableOpacity style={{ ...styles.container, ...style }}>
+        <TouchableOpacity style={{ ...styles.container, ...style }} {...otherProps}>
             <Text style={{ textAlign, ...styles.content }}>{children}</Text>
         </TouchableOpacity>
     )
@@ -17,7 +17,7 @@ export function TextButton(props) {
     const { children, textAlign = 'left', size = 14, style, ...otherProps } = props
 
     return (
-        <TouchableOpacity style={styles.textButton} {...otherProps}>
+        <TouchableOpacity style={{...styles.textButton, flexDirection: 'row'}} {...otherProps}>
             <Text style={{ ...styles.textButtonContent, textAlign, fontSize: size, ...style }}>{children}</Text>
         </TouchableOpacity>
     )

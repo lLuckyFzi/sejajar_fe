@@ -1,12 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { StyleSheet, TextInput, View } from 'react-native'
+import AppText from '../Text/Text'
 
 function Input(props) {
     const { label, secureTextEntry, ...otherInputProps } = props
 
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>{label}</Text>
+            <AppText style={styles.label} fontFamily='Raleway-SemiBold'>{label}</AppText>
             <TextInput secureTextEntry={secureTextEntry} style={styles.input} placeholder='Placeholder' {...otherInputProps} />
         </View>
     )
@@ -18,10 +19,6 @@ const styles = StyleSheet.create({
         gap: 8,
     },
 
-    label: {
-        fontSize: 14,
-        fontFamily: 'Raleway-SemiBold',
-    },
     input: {
         backgroundColor: "white",
         borderRadius: 8,
