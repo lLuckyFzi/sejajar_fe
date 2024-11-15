@@ -1,14 +1,24 @@
-import { Text } from '@react-navigation/elements'
 import React from 'react'
-import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Colors } from '../../contants'
+import { Text } from '@react-navigation/elements'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 
 export function PrimaryButton(props) {
-    const { children, textAlign = 'center' } = props
+    const { children, textAlign = 'center', style } = props
 
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={{ ...styles.container, ...style }}>
             <Text style={{ textAlign, ...styles.content }}>{children}</Text>
+        </TouchableOpacity>
+    )
+}
+
+export function TextButton(props) {
+    const { children, textAlign = 'left', size = 14, style, ...otherProps } = props
+
+    return (
+        <TouchableOpacity style={styles.textButton} {...otherProps}>
+            <Text style={{ ...styles.textButtonContent, textAlign, fontSize: size, ...style }}>{children}</Text>
         </TouchableOpacity>
     )
 }
@@ -22,7 +32,14 @@ const styles = StyleSheet.create({
     content: {
         color: "white",
         fontSize: 16,
-        fontWeight: '600'
+        fontFamily: 'Raleway-SemiBold',
+    },
+
+    //Text-Button
+    textButton: {},
+    textButtonContent: {
+        color: Colors.primaryColor,
+        fontFamily: 'Raleway-Light',
     }
 })
 
