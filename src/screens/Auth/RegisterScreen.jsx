@@ -1,40 +1,47 @@
 import React from 'react'
 import Input from '../../components/Inputs/Input'
 import { useNavigation } from '@react-navigation/native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import PrimaryButton, { TextButton } from '../../components/Buttons/Button'
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
-function LoginScreen() {
+function RegisterScreen() {
     const navigation = useNavigation()
 
     return (
-        <SafeAreaView style={{
-            flex: 1,
-            justifyContent: 'space-between',
-            backgroundColor: '#F9F9F9',
+        <KeyboardAwareScrollView contentContainerStyle={{
+            flexGrow: 1,
+            justifyContent: 'space-between'
         }}>
             <View style={styles.container}>
                 <Image style={styles.logo} source={require('../../assets/Images/logo/sejajar_logo.png')} />
                 <View>
                     <View style={styles.header}>
-                        <Text style={styles.title}>Masuk</Text>
-                        <Text style={styles.description}>Selamat Datang Kembali!</Text>
+                        <Text style={styles.title}>Daftar</Text>
                     </View>
                     <View style={styles.formContainer}>
-                        <Input label="No Telepon" placeholder="Masukkan No Telepon" />
+                        <Input label="Email" placeholder="Masukkan Email" />
+                        <Input inputMode='numeric' label="No Telepon" placeholder="Masukkan No Telepon" />
                         <Input secureTextEntry label="Password" placeholder="Masukkan Password" />
-                        <TextButton textAlign="right">Lupa Password?</TextButton>
+                        <Input secureTextEntry label="Confirmn Password" placeholder="Confirmn Password" />
 
-                        <PrimaryButton style={{ marginTop: 20 }}>Masuk</PrimaryButton>
+                        <PrimaryButton style={{ marginTop: 20 }}>Daftar</PrimaryButton>
                     </View>
-
                 </View>
             </View>
             <View style={styles.footer}>
-                <Text style={styles.footerContent}>Tidak Punya Akun?</Text>
-                <TextButton size={16} style={{ fontFamily: 'Raleway-SemiBold' }} onPress={() => navigation.navigate('RegisterScreen')}>Daftar</TextButton>
+                <Text style={styles.footerContent}>Sudah Punya Akun?</Text>
+                <TextButton
+                    size={16}
+                    onPress={() => navigation.goBack()}
+                    style={{
+                        fontFamily: 'Raleway-SemiBold',
+                    }}
+                >
+                    Masuk
+                </TextButton>
             </View>
-        </SafeAreaView>
+        </KeyboardAwareScrollView>
     )
 }
 
@@ -44,8 +51,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
         justifyContent: 'center',
         gap: 20,
-        position: 'relative',
-        height: '95%',
+        marginTop: 50,
     },
 
     logo: {
@@ -75,7 +81,7 @@ const styles = StyleSheet.create({
         gap: 5,
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom: 20
+        marginBottom: 20,
     },
     footerContent: {
         fontSize: 16,
@@ -83,4 +89,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default LoginScreen
+export default RegisterScreen
