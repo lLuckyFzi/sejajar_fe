@@ -3,6 +3,7 @@ import Input from '../../components/Inputs/Input'
 import { useNavigation } from '@react-navigation/native'
 import PrimaryButton, { TextButton } from '../../components/Buttons/Button'
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Colors } from '../../contants'
 
 function LoginScreen() {
     const navigation = useNavigation()
@@ -11,7 +12,7 @@ function LoginScreen() {
         <SafeAreaView style={{
             flex: 1,
             justifyContent: 'space-between',
-            backgroundColor: '#F9F9F9',
+            backgroundColor: Colors.bgColor,
         }}>
             <View style={styles.container}>
                 <Image style={styles.logo} source={require('../../assets/Images/logo/sejajar_logo.png')} />
@@ -23,7 +24,9 @@ function LoginScreen() {
                     <View style={styles.formContainer}>
                         <Input label="No Telepon" placeholder="Masukkan No Telepon" />
                         <Input secureTextEntry label="Password" placeholder="Masukkan Password" />
-                        <TextButton textAlign="right">Lupa Password?</TextButton>
+                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                            <TextButton textAlign="right" onPress={() => navigation.navigate('InsertEmailScreen')}>Lupa Password?</TextButton>
+                        </View>
 
                         <PrimaryButton style={{ marginTop: 20 }}>Masuk</PrimaryButton>
                     </View>
