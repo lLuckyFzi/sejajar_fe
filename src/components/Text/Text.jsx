@@ -4,7 +4,7 @@ import { StyleSheet, Text } from 'react-native'
 import { Colors } from '../../contants'
 
 /**
- * @typedef {"Montserrat-Light" | "Montserrat-Regular" | "Montserrat-SemiBold" | "Montserrat-Bold" | "Montserrat-Black" | "Raleway-Light" | "Raleway-Regular" | "Raleway-SemiBold" | "Raleway-Bold" | "Raleway-Black"} FontFamily
+ * @typedef {"Montserrat-Light" | "Montserrat-Regular" | "Montserrat-Medium" | "Montserrat-SemiBold" | "Montserrat-Bold" | "Montserrat-Black" | "Raleway-Light" | "Raleway-Regular" | "Raleway-SemiBold" | "Raleway-Bold" | "Raleway-Black"} FontFamily
  */
 
 /**

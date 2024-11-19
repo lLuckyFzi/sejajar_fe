@@ -6,6 +6,7 @@ import RegisterScreen from './screens/Auth/RegisterScreen'
 import InsertEmail from './screens/Auth/ForgotPassword/InsertEmail'
 import PasswordOTP from './screens/Auth/ForgotPassword/PasswordOTP'
 import NewPassword from './screens/Auth/ForgotPassword/NewPassword'
+import Home from './screens/Home/Home'
 
 const Stack = createNativeStackNavigator()
 
@@ -20,6 +21,8 @@ function MainStack() {
             <Stack.Screen name='PasswordOTPScreen' component={PasswordOTP} options={{ headerShown: false, }} />
             <Stack.Screen name='NewPasswordScreen' component={NewPassword} options={{ headerShown: false, }} />
             {/* End Forgot Password Stack */}
+
+            <Stack.Screen name='HomeScreen' component={Home} options={{ headerShown: false, }} />
 
             
         </Stack.Navigator>

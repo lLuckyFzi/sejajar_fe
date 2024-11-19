@@ -28,7 +28,7 @@ function LoginScreen() {
                             <TextButton textAlign="right" onPress={() => navigation.navigate('InsertEmailScreen')}>Lupa Password?</TextButton>
                         </View>
 
-                        <PrimaryButton style={{ marginTop: 20 }}>Masuk</PrimaryButton>
+                        <PrimaryButton style={{ marginTop: 20 }} onPress={() => navigation.navigate("HomeScreen")}>Masuk</PrimaryButton>
                     </View>
 
                 </View>
