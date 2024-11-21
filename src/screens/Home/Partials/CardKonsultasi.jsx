@@ -1,7 +1,8 @@
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import AppText from '../../../components/Text/Text';
+
 import {Colors} from '../../../contants';
+import AppText from '../../../components/Text/Text';
 
 function CardKonsultasi(props) {
   const {title, description, illustration, color = Colors.primaryColor} = props;
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
   },
   cardImg: {
     position: 'absolute',
-    top: -60,
+    top: -50,
     right: -100,
     bottom: 0,
     width: '100%',
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   },
   konsultasiCardText: {
     color: 'white',
-    width: '80%',
+    width: '70%',
   },
 });
 
