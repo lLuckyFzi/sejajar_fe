@@ -24,7 +24,7 @@ import { Colors } from '../../contants'
  * @param {AppTextProps} props - Props untuk AppText.
  */
 
-function AppText(props) {
+function  AppText(props) {
     const { fontFamily, size, children, style, ...otherProps } = props
 
     return (

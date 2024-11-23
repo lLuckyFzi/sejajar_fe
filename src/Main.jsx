@@ -11,6 +11,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Schedule from './screens/Schedule/Schedule'
 import Chats from './screens/Chats/Chats'
 import Transaction from './screens/Transaction/Transaction'
+import IonIcon from 'react-native-vector-icons/Ionicons';
+import { Colors } from './contants'
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator();
@@ -20,24 +22,27 @@ function HomeTabs() {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused, color, size }) => {
-                    // let iconName;
+                    let iconName;
 
-                    // if (route.name === 'Home') {
-                    //     iconName = focused ? 'home' : 'home-outline';
-                    // } else if (route.name === 'Profile') {
-                    //     iconName = focused ? 'account' : 'account-outline';
-                    // } else if (route.name === 'Settings') {
-                    //     iconName = focused ? 'cog' : 'cog-outline';
-                    // }
+                    if (route.name === 'Home') {
+                        iconName = focused ? 'home' : 'home-outline';
+                    } else if (route.name === 'Schedule') {
+                        iconName = focused ? 'time' : 'time-outline';
+                    } else if (route.name === 'Chats') {
+                        iconName = focused ? 'chatbox' : 'chatbox-outline';
+                    } else if (route.name === 'Transaction') {
+                        iconName = focused ? 'list' : 'list-outline';
+                    }
 
-                    // return <Icon name={iconName} size={size} color={color} />;
+                    return <IonIcon name={iconName} size={size} color={color} />;
                 },
-                tabBarActiveTintColor: 'blue',
+                tabBarActiveTintColor: Colors.primaryColor,
                 tabBarInactiveTintColor: 'gray',
                 tabBarStyle: { height: 60, borderTopLeftRadius: 15, borderTopRightRadius: 15 },
+                tabBarLabel: ''
             })}
         >
-            <Tab.Screen name="HomeScreen" component={Home} options={{ headerShown: false }} />
+            <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
             <Tab.Screen name="Schedule" component={Schedule} options={{ headerShown: false }} />
             <Tab.Screen name="Chats" component={Chats} options={{ headerShown: false }} />
             <Tab.Screen name="Transaction" component={Transaction} options={{ headerShown: false }} />
